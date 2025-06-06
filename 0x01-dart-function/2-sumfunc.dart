@@ -7,7 +7,5 @@ int sub(int a, int b) {
 }
 
 String showFunc(int a, int b) {
-  var addReturn = add(a, b);
-  var subReturn = sub(a, b);
-  return 'Add $a + $b = $addReturn \nSub $a - $b = $subReturn';
+  return "Add ${a} + ${b} = ${add(a, b)}\nSub ${a} - ${b} = ${sub(a, b)}";
 }

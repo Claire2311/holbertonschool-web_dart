@@ -1,7 +1,4 @@
 void main() {
   String str = "Holberton School";
-var str2 = '''${str * 3 }
-${str.substring(0, 9)}
-''';
-  print(str2);
+  print(str * 3 + '\n' + str.substring(0, 9) + '\n');
 }

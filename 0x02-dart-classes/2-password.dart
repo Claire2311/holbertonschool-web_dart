@@ -2,14 +2,14 @@ class Password {
   String password = "";
 
   bool isValid() {
-    var exp = RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$");
-
     return (password.length >= 8 && password.length <= 16) &&
-        exp.hasMatch(password);
+        this.password.contains(RegExp(r'[A-Z]')) &&
+        this.password.contains(RegExp(r'[a-z]')) &&
+        this.password.contains(RegExp(r'\d'));
   }
 
   @override
   String toString() {
-    return "Your password is: ${password}";
+    return "Your password is: ${this.password}";
   }
 }

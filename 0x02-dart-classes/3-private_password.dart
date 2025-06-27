@@ -5,6 +5,8 @@ class Password {
     _password = password;
   }
 
+  String get password => _password;
+
   bool isValid() {
     return ((_password.length >= 8) && (_password.length <= 16)) &&
         _password.contains(RegExp(r"[A-Z]")) &&

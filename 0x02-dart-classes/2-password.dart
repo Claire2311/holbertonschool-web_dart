@@ -4,8 +4,7 @@ class Password {
   bool isValid() {
     var exp = RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$");
 
-    return password.length >= 8 &&
-        password.length <= 16 &&
+    return (password.length >= 8 && password.length <= 16) &&
         exp.hasMatch(password);
   }
 

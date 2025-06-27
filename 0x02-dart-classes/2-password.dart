@@ -3,12 +3,10 @@ class Password {
 
   bool isValid() {
     var exp = RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$");
-    if (password.length >= 8 &&
+
+    return password.length >= 8 &&
         password.length <= 16 &&
-        exp.hasMatch(password)) {
-      return true;
-    }
-    return false;
+        exp.hasMatch(password);
   }
 
   @override

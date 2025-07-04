@@ -5,7 +5,6 @@ class User extends Password {
   String name;
   int age;
   double? height;
-  String user_password = "";
 
   User({
     this.id,
@@ -14,6 +13,12 @@ class User extends Password {
     this.height,
     String user_password = "",
   }) : super(password: user_password);
+
+  String get user_password => super.password;
+
+  set user_password(String newPassword) {
+    super.password = newPassword;
+  }
 
   Map<String, dynamic> toJson() => {
     'id': id,
@@ -28,11 +33,12 @@ class User extends Password {
       name: userJson['name'] as String? ?? '',
       age: userJson['age'] as int? ?? 0,
       height: userJson['height'] as double?,
+      user_password: userJson['user_password'] as String? ?? "",
     );
   }
 
+  @override
   String toString() {
-    bool isValidPassword = isValid();
-    return "User(id : $id ,name: $name, age: $age, height: $height, Password: $isValidPassword)";
+    return "User(id : $id ,name: $name, age: $age, height: $height, Password: ${isValid()})";
   }
 }
